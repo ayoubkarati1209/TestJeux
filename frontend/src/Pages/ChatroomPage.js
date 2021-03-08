@@ -6,9 +6,7 @@ const ChatroomPage = ({ match, socket }) => {
   const [messages, setMessages] = React.useState([]);
   const messageRef = React.useRef();
   const [userId, setUserId] = React.useState("");
-  socket.on('counter', function(count){
-    console.log(count);
-    });
+
   const sendMessage = () => {
     if (socket) {
       socket.emit("chatroomMessage", {
